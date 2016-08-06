@@ -2,5 +2,5 @@ class Link < ActiveRecord::Base
 	acts_as_votable
 	belongs_to :user
 	validates :user, presence: true
-	has_many :comments
+	has_many :comments, dependent: :destroy
 end
